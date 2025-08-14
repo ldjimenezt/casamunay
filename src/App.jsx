@@ -10,18 +10,16 @@ import About from './pages/About'
 import NotFound404 from './pages/NotFound404'
 import ScrollToTop from './components/ScrollToTop'
 
-
 const App = () => {
-
-  const isOwnerPath = useLocation().pathname.includes('owner')
+  const location = useLocation()
+  const isOwnerPath = location.pathname.includes('owner')
 
   return (
     <div>
+      <ScrollToTop />
       {!isOwnerPath && <Navbar />}
       <div className='min-h-[70vh]'>
-        <ScrollToTop />
         <Routes>
-          
           <Route path='/' element={<Home />} />
           <Route path='/cabins' element={<Cabins />} />
           <Route path='/gallery' element={<Gallery />} />
