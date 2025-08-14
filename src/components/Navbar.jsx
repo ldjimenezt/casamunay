@@ -76,9 +76,9 @@ const Navbar = () => {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
-          <a
+          <Link
             key={i}
-            href={link.path}
+            to={link.path}
             className={`group flex flex-col gap-0.5 ${
               isScrolled ? "text-gray-700" : "text-white"
             }`}
@@ -89,27 +89,12 @@ const Navbar = () => {
                 isScrolled ? "bg-gray-700" : "bg-white"
               } h-0.5 w-0 group-hover:w-full transition-all duration-300`}
             />
-          </a>
+          </Link>
         ))}
-        {/* <button
-          className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
-          } transition-all`}
-          onClick={() => navigate("/owner")}
-        >
-          Dashboard
-        </button> */}
       </div>
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
-        {/* <img
-          src={assets.searchIcon}
-          alt="search"
-          className={`${
-            isScrolled && "invert"
-          } h-7 transition-all duration-500`}
-        /> */}
         {user ? (
           <UserButton>
             <UserButton.MenuItems>
@@ -131,7 +116,6 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-
       <div className="flex items-center gap-3 md:hidden">
         {user && (
           <UserButton>
@@ -166,9 +150,13 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+          <Link 
+            key={i} 
+            to={link.path} 
+            onClick={() => setIsMenuOpen(false)}
+          >
             {link.name}
-          </a>
+          </Link>
         ))}
 
         {user && (
