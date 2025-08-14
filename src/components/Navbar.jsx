@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
-import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 
 const BookIcon = () => (
@@ -37,22 +36,20 @@ const Navbar = () => {
 
   const { openSignIn } = useClerk();
   const { user } = useUser();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname !== "/") {
+    if (window.location.pathname !== "/") {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
-      
+
       const handleScroll = () => {
         setIsScrolled(window.scrollY > 10);
       };
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
-  }, [location.pathname]);
+  }, []);
 
   return (
     <nav
@@ -63,20 +60,20 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-      <Link to="/">
+      <a href="/">
         <img
           src={assets.logo}
           alt="logo"
           className={`h-16 ${isScrolled && "invert opacity-80"}`}
         />
-      </Link>
+      </a>
 
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-4 lg:gap-8">
         {navLinks.map((link, i) => (
-          <Link
+          <a
             key={i}
-            to={link.path}
+            href={link.path}
             className={`group flex flex-col gap-0.5 ${
               isScrolled ? "text-gray-700" : "text-white"
             }`}
@@ -87,7 +84,7 @@ const Navbar = () => {
                 isScrolled ? "bg-gray-700" : "bg-white"
               } h-0.5 w-0 group-hover:w-full transition-all duration-300`}
             />
-          </Link>
+          </a>
         ))}
       </div>
 
@@ -99,7 +96,7 @@ const Navbar = () => {
               <UserButton.Action
                 label="Mis Reservas"
                 labelIcon={<BookIcon />}
-                onClick={() => navigate("/my-bookings")}
+                onClick={() => (window.location.href = "/my-bookings")}
               />
             </UserButton.MenuItems>
           </UserButton>
@@ -121,7 +118,7 @@ const Navbar = () => {
               <UserButton.Action
                 label="Mis Reservas"
                 labelIcon={<BookIcon />}
-                onClick={() => navigate("/my-bookings")}
+                onClick={() => (window.location.href = "/my-bookings")}
               />
             </UserButton.MenuItems>
           </UserButton>
@@ -148,19 +145,15 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <Link 
-            key={i} 
-            to={link.path} 
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
             {link.name}
-          </Link>
+          </a>
         ))}
 
         {user && (
           <button
             className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
-            onClick={() => navigate("/owner")}
+            onClick={() => (window.location.href = "/owner")}
           >
             Dashboard
           </button>
