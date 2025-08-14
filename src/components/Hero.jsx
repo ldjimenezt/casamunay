@@ -3,11 +3,11 @@ import { assets } from "../assets/assets";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url('/src/assets/heroImage.png')] bg-no-repeat bg-cover bg-center h-screen ">
+    <div className="flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url('/src/assets/heroImage.png')] bg-no-repeat bg-cover bg-center h-screen">
       <p className="bg-[#BAA78B]/50 px-3.5 py-1 rounded-full mt-20">
         Casa Munay, tu santuario en la montaña.
       </p>
-      <h1 className="font-playfair text-5xl md:text-5xl md:text-[86px] md:leading-[72px] font-bold md:font-extrabold max-w-xl mt-4">
+      <h1 className="font-playfair text-5xl md:text-5xl md:text-[86px] md:leading-[72px] font-bold md:font-extrabold max-w-3xl mt-4">
         Aquí todo es sagrado
       </h1>
       <p className="max-w-130 mt-2 text-sm md:text-base">
@@ -52,7 +52,7 @@ const Hero = () => {
         </div>
 
         <button className="flex items-center justify-center gap-1 rounded-md bg-[#BAA78B] py-3 px-4 text-white my-auto cursor-pointer max-md:w-full max-md:py-1">
-          <img src={assets.searchIcon} alt="searchIcon" className="h-4"/>
+          <img src={assets.searchIcon} alt="searchIcon" className="h-4" />
           <span>Search</span>
         </button>
       </form>

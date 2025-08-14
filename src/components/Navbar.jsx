@@ -27,9 +27,9 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Cabañas", path: "/cabins" },
-    { name: "Galería", path: "/" },
-    { name: "Nosotros", path: "/" },
-    { name: "Contacto", path: "/" },
+    { name: "Galería", path: "/gallery" },
+    { name: "Nosotros", path: "/about" },
+    { name: "Contacto", path: "/contact" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,14 +41,13 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-
-    if(location.pathname !== '/'){
-        setIsScrolled(true);
-        return;
-    }else{
-        setIsScrolled(false);
+    if (location.pathname !== "/") {
+      setIsScrolled(true);
+      return;
+    } else {
+      setIsScrolled(false);
     }
-    setIsScrolled(prev => location.pathname !== '/' ? true : prev);
+    setIsScrolled((prev) => (location.pathname !== "/" ? true : prev));
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -92,25 +91,25 @@ const Navbar = () => {
             />
           </a>
         ))}
-        <button
+        {/* <button
           className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
             isScrolled ? "text-black" : "text-white"
           } transition-all`}
           onClick={() => navigate("/owner")}
         >
           Dashboard
-        </button>
+        </button> */}
       </div>
 
       {/* Desktop Right */}
       <div className="hidden md:flex items-center gap-4">
-        <img
+        {/* <img
           src={assets.searchIcon}
           alt="search"
           className={`${
             isScrolled && "invert"
           } h-7 transition-all duration-500`}
-        />
+        /> */}
         {user ? (
           <UserButton>
             <UserButton.MenuItems>
@@ -124,7 +123,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={openSignIn}
-            className="bg-[#BAA78B] text-white px-8 py-2.5 rounded-full ml-4 transition-all duration-500"
+            className="flex items-center gap-2 mx-auto px-6 py-2 text-lg font-medium text-white bg-[#BAA78B] rounded-[25px] transition-all duration-300 hover:bg-[#a29277] group cursor-pointer"
           >
             Login
           </button>

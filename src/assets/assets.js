@@ -31,12 +31,32 @@ import regImage from './regImage.png'
 import exclusiveOfferCardImg1 from "./exclusiveOfferCardImg1.png";
 import exclusiveOfferCardImg2 from "./exclusiveOfferCardImg2.png";
 import exclusiveOfferCardImg3 from "./exclusiveOfferCardImg3.png";
+import exclusiveOfferCardImg4 from "./exclusiveOfferCardImg4.png";
 import addIcon from "./addIcon.svg";
 import dashboardIcon from "./dashboardIcon.svg";
 import listIcon from "./listIcon.svg";
 import uploadArea from "./uploadArea.svg";
 import totalBookingIcon from "./totalBookingIcon.svg";
 import totalRevenueIcon from "./totalRevenueIcon.svg";
+import exclusiveOfferCardImg5 from "./exclusiveOfferCardImg5.png";
+import cabinImg1 from "./cabinImg1.png";
+import cabinImg2 from "./cabinImg2.png";
+import cabinImg3 from "./cabinImg3.png";
+import cabinImg4 from "./cabinImg4.png";
+import cabinImg5 from "./cabinImg5.png";
+import galleryImg1 from "./galleryImg1.png"
+import galleryImg2 from "./galleryImg2.png"
+import galleryImg3 from "./galleryImg3.png"
+import galleryImg4 from "./galleryImg4.png"
+import galleryImg5 from "./galleryImg5.png"
+import galleryImg6 from "./galleryImg6.png"
+import galleryImg7 from "./galleryImg7.png"
+import galleryImg8 from "./galleryImg8.png"
+import galleryImg9 from "./galleryImg9.png"
+import galleryImg10 from "./galleryImg10.png"
+import galleryImg11 from "./galleryImg11.png"
+import galleryImg12 from "./galleryImg12.png"
+
 
 
 export const assets = {
@@ -86,6 +106,34 @@ export const exclusiveOffers = [
     { _id: 1, title: "Summer Escape Package", description: "Enjoy a complimentary night and daily breakfast", priceOff: 25, expiryDate: "Aug 31", image: exclusiveOfferCardImg1 },
     { _id: 2, title: "Romantic Getaway", description: "Special couples package including spa treatment", priceOff: 20, expiryDate: "Sep 20", image: exclusiveOfferCardImg2 },
     { _id: 3, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg3 },
+    { _id: 4, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg4 },
+    { _id: 5, title: "Luxury Retreat", description: "Book 60 days in advance and save on your stay at any of our luxury properties worldwide.", priceOff: 30, expiryDate: "Sep 25", image: exclusiveOfferCardImg5 },
+]
+
+// Exclusive Cabins Dummy Data 
+export const CabinsImgs = [
+    { id: 1, image: cabinImg1 },
+    { id: 2, image: cabinImg2 },
+    { id: 3, image: cabinImg3 },
+    { id: 4, image: cabinImg4 },
+    { id: 5, image: cabinImg5 },
+    
+]
+
+// Gallery Dummy Data
+export const GalleryImgs = [
+    { id: 1, image: galleryImg1 },
+    { id: 2, image: galleryImg2 },
+    { id: 3, image: galleryImg3 },
+    { id: 4, image: galleryImg4 },
+    { id: 5, image: galleryImg5 },
+    { id: 6, image: galleryImg6 },
+    { id: 7, image: galleryImg7 },
+    { id: 8, image: galleryImg8 },
+    { id: 9, image: galleryImg9 },
+    { id: 10, image: galleryImg10 },
+    { id: 11, image: galleryImg11 },
+    { id: 12, image: galleryImg12 },
 ]
 
 // Testimonials Dummy Data
